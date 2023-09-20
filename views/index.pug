@@ -7,12 +7,13 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Message Board
     body 
+        h1=process.env.DB
         h1= title
         a(href="/new") 
             button New 
         each message in messages
             .postWrapper 
-                .user=message.user
-                .content=message.text 
-                .date=message.added
+                .user=message.author
+                .content=message.message 
+                .date=message.date
             
